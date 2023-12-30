@@ -1,0 +1,10 @@
+.git*
+src
+tests
+tsconfig.json
+pnpm-lock.yaml
+.idea
+.vscode
+.editorconfig
+.nvmrc
+.DS_Store

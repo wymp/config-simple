@@ -1,0 +1,8 @@
+dist
+.env
+*.log
+coverage
+node_modules
+
+# Using pnpm now
+package-lock.json

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validate handles multiple errors per key 1`] = `
+"Invalid configuration: 
+
+  * a (MY_ENV_VAR):
+    * bad
+    * worse
+    * worst"
+`;
+
+exports[`validate should return a ConfigResult if there are errors and behavior is "dont-throw" 1`] = `
+{
+  "errors": [
+    "c.d: bad",
+  ],
+  "t": "error",
+  "value": {
+    "a": 1,
+    "b": "2",
+    "c": {
+      "d": "::ERROR::bad",
+    },
+  },
+}
+`;
+
+exports[`validate should throw an error if there are errors 1`] = `
+"Invalid configuration: 
+
+  * c.d: bad
+  * e: more bad"
+`;

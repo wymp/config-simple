@@ -8,7 +8,7 @@
     "build": "tsc",
     "clean": "rm -Rf ./dist || true; rm -Rf ./docs || true",
     "docs:gen": "typedoc src/index.ts --sort visibility --sort static-first --sort alphabetical",
-    "docs:serve": "pnpx http-server ./docs",
+    "docs:view": "pnpx http-server -o -c 300 ./docs",
     "format": "pnpm prettier:fix && pnpm lint:fix",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslintcache src tests",
     "lint:fix": "pnpm lint --fix",

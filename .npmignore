@@ -1,7 +1,7 @@
 .git*
 src
 tests
-tsconfig.json
+tsconfig*.json
 pnpm-lock.yaml
 .idea
 .vscode

@@ -1,4 +1,4 @@
-import { ConfigError } from "./types";
+import { ConfigError } from "./types.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isConfigError = (val: any): val is ConfigError =>

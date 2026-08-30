@@ -1,4 +1,4 @@
-import { ValidatorFunc } from "../types";
+import { ValidatorFunc } from "../types.js";
 
 export const exactLen =
   (len: number): ValidatorFunc<string> =>

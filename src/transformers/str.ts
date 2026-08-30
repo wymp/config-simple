@@ -1,4 +1,4 @@
-import { Transformer } from "../types";
+import { Transformer } from "../types.js";
 
 /** A standard string transformer */
 export const str: Transformer<string> = {

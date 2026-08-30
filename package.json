@@ -2,10 +2,25 @@
   "name": "@wymp/config-simple",
   "version": "1.0.0",
   "description": "A simple, dotenv-based configuration system that works in node and browser",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc -p tsconfig.esm.json && pnpm build:markers",
+    "build:markers": "printf '{\"type\":\"commonjs\"}' > dist/cjs/package.json && printf '{\"type\":\"module\"}' > dist/esm/package.json",
+    "prepack": "pnpm build",
     "clean": "rm -Rf ./dist || true; rm -Rf ./docs || true",
     "docs:gen": "typedoc src/index.ts --sort visibility --sort static-first --sort alphabetical",
     "docs:view": "pnpx http-server -o -c 300 ./docs",
@@ -55,6 +70,10 @@
     ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
     }
-  }
+  },
+  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
 }

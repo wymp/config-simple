@@ -1,4 +1,4 @@
-import { ConfigError } from "./types";
+import { ConfigError } from "./types.js";
 
 type CleanFrozenConfig<T> = T extends object
   ? { readonly [K in keyof T]: CleanFrozenConfig<T[K]> }

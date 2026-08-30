@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist/esm",
+
+    // This package's base tsconfig is `module: commonjs` + `moduleResolution: node`, so
+    // unlike weenie-base this genuinely is a module-system migration rather than a second
+    // output format. Both settings below are required:
+    //
+    // - `module: esnext` is what actually produces ESM emit instead of CommonJS.
+    // - `moduleResolution: bundler` is required because `esnext` cannot pair with the
+    //   inherited `node` resolution in the way this project needs, and bundler resolution
+    //   is inert here since nothing in src/ imports a non-relative module.
+    //
+    // Relative specifiers in src/ carry explicit `.js` extensions (23 of them across 12
+    // files). Node's ESM loader requires them and `tsc` never rewrites specifiers, so
+    // without them dist/esm would throw ERR_MODULE_NOT_FOUND at first import. Note that
+    // `moduleResolution: bundler` does NOT require extensions, so the compiler provides
+    // no backstop here — the grep assertion in the build is the only guard.
+    "module": "esnext",
+    "moduleResolution": "bundler",
+
+    "incremental": true,
+    "tsBuildInfoFile": "./dist/.tsbuildinfo-esm"
+  },
+  "include": ["src/**/*"]
+}

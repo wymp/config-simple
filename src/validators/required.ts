@@ -1,4 +1,4 @@
-import { ConfigError, ValidatorFunc } from "../types";
+import { ConfigError, ValidatorFunc } from "../types.js";
 
 /** NOTE: This is intended to be an INTERNAL validator function */
 export const required = <T>(val: T | undefined | ConfigError): string | void => {

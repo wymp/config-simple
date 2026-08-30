@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "strictNullChecks": true,
-    "outDir": "dist",
+    "outDir": "dist/cjs",
     "baseUrl": ".",
     "types": ["node", "jest"]
   },

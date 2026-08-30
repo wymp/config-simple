@@ -1,5 +1,5 @@
-import { requiredForEnvs, requiredIf } from "./required";
-import { exactLen, httpHost, match, maxLen, minLen, oneOf } from "./string";
+import { requiredForEnvs, requiredIf } from "./required.js";
+import { exactLen, httpHost, match, maxLen, minLen, oneOf } from "./string.js";
 
 /**
  * A library of bundled validators that you may use in your config definitions. You can also write your own validators

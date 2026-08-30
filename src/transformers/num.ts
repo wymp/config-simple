@@ -1,4 +1,4 @@
-import { Transformer } from "../types";
+import { Transformer } from "../types.js";
 
 /** A standard number transformer */
 export const num: Transformer<number> = {

@@ -1,4 +1,4 @@
-import { Transformer } from "../types";
+import { Transformer } from "../types.js";
 
 export const csvToArray: Transformer<string[]> = {
   transform: (val: string | undefined) => {

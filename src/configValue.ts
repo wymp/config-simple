@@ -1,7 +1,7 @@
-import { Transformers } from "./transformers/transformers";
-import { ConfigError, REQUIRED, Transformer, ValidatorFunc } from "./types";
-import { isConfigError } from "./utils";
-import { required as requiredValidator } from "./validators/required";
+import { Transformers } from "./transformers/transformers.js";
+import { ConfigError, REQUIRED, Transformer, ValidatorFunc } from "./types.js";
+import { isConfigError } from "./utils.js";
+import { required as requiredValidator } from "./validators/required.js";
 
 type ValidatorArg<T> = ValidatorFunc<T> | ValidatorFunc<T>[];
 type DefOrReq<T> = T | typeof REQUIRED;

@@ -1,7 +1,7 @@
-import { bool } from "./bool";
-import { csvToArray } from "./csvToArray";
-import { num } from "./num";
-import { str } from "./str";
+import { bool } from "./bool.js";
+import { csvToArray } from "./csvToArray.js";
+import { num } from "./num.js";
+import { str } from "./str.js";
 
 /**
  * A library of transformer functions that are bundled with this library. Note: It is generally easier to use the string
